@@ -84,7 +84,7 @@ public class TicTacToe {
         return ((c1 != '-') && (c1 == c2) && (c2 == c3));
     }
 
-    // Method to switch player turns
+
     public void changePlayer() {
         if (currentPlayer == 'X') {
             currentPlayer = 'O';
