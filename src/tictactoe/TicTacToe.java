@@ -10,7 +10,7 @@ public class TicTacToe {
     private final char[][] board;
     private char currentPlayer;
 
-    // Constructor to initialize the game
+
     public TicTacToe() {
         board = new char[3][3];
         currentPlayer = 'X';
@@ -18,7 +18,7 @@ public class TicTacToe {
         initializeBoard();
     }
 
-    // Method to initialize the board with empty spaces
+
     public final void initializeBoard() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -27,7 +27,6 @@ public class TicTacToe {
         }
     }
 
-    // Method to print the current board
     public void printBoard() {
         System.out.println("-------------");
         for (int i = 0; i < 3; i++) {
@@ -40,7 +39,7 @@ public class TicTacToe {
         }
     }
 
-    // Method to check if the board is full
+
     public boolean isBoardFull() {
         boolean isFull = true;
         for (int i = 0; i < 3; i++) {
@@ -53,12 +52,12 @@ public class TicTacToe {
         return isFull;
     }
 
-    // Method to check if there is a winner
+
     public boolean checkForWin() {
         return (checkRowsForWin() || checkColumnsForWin() || checkDiagonalsForWin());
     }
 
-    // Helper methods for checkForWin
+
     private boolean checkRowsForWin() {
         for (int i = 0; i < 3; i++) {
             if (checkRowCol(board[i][0], board[i][1], board[i][2])) {
@@ -96,7 +95,7 @@ public class TicTacToe {
         
     }
 
-    // Method to make a move
+
     public boolean makeMove(int row, int col) {
         if (row >= 0 && row < 3 && col >= 0 && col < 3 && board[row][col] == '-') {
             board[row][col] = currentPlayer;
@@ -113,7 +112,7 @@ public class TicTacToe {
                 game.printBoard();
                 System.out.println("Player " + game.currentPlayer + ", enter your move (row [1-3] column [1-3]): ");
                 
-                // Adjusting for 0-based index internally, but 1-based for user input
+                
                 row = scanner.nextInt() - 1;
                 col = scanner.nextInt() - 1;
                 
